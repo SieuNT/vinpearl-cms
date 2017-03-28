@@ -41,6 +41,18 @@ return [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
+                'site/index' => '/',
+                'tin-tuc' => 'post/index',
+                [
+                    'pattern' => '<slug:[\w\-]+>',
+                    'route' => 'project/view',
+                    'suffix' => ''
+                ],
+                [
+                    'pattern' => 'tin-tuc/<slug:[\w\-]+>',
+                    'route' => 'post/view',
+                    'suffix' => ''
+                ],
             ],
         ],
     ],

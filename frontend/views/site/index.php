@@ -99,7 +99,7 @@ JS;
     <p>&nbsp;</p>
     <div class="row">
         <div class="col-xs-12">
-            <h3 class="project--title">Tin tức</h3>
+            <h3 class="project--title">Tin tức Nổi bật</h3>
         </div>
     </div>
     <p>&nbsp;</p>
@@ -131,7 +131,7 @@ JS;
                                 <?= Html::a($post['title'], ['post/view', 'slug' => $post['slug']]); ?>
                             </h4>
                             <div class="post-item--desc">
-                                <?= \yii\helpers\StringHelper::truncateWords($testimonial['content'], 30) ?>
+                                <?= \yii\helpers\StringHelper::truncateWords(strip_tags($post['content']), 30) ?>
                             </div>
                         </div>
                     </div>
