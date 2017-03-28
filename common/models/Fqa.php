@@ -53,6 +53,7 @@ class Fqa extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
+            [['title', 'project_id'], 'required'],
             [['project_id', 'created_at', 'updated_at', 'created_by', 'updated_by'], 'integer'],
             [['question', 'answer'], 'string'],
             [['title', 'slug'], 'string', 'max' => 255],
@@ -68,10 +69,10 @@ class Fqa extends \yii\db\ActiveRecord
         return [
             'id' => Yii::t('app', 'ID'),
             'project_id' => Yii::t('app', 'Project ID'),
-            'title' => Yii::t('app', 'Title'),
-            'slug' => Yii::t('app', 'Slug'),
-            'question' => Yii::t('app', 'Question'),
-            'answer' => Yii::t('app', 'Answer'),
+            'title' => Yii::t('app', 'Tiêu đề'),
+            'slug' => Yii::t('app', 'Đường dẫn thân thiện'),
+            'question' => Yii::t('app', 'Câu hỏi'),
+            'answer' => Yii::t('app', 'Câu trả lời'),
             'created_at' => Yii::t('app', 'Created At'),
             'updated_at' => Yii::t('app', 'Updated At'),
             'created_by' => Yii::t('app', 'Created By'),

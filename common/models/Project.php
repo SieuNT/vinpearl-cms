@@ -56,6 +56,7 @@ class Project extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
+            [['title'], 'required'],
             [['created_at', 'updated_at', 'created_by', 'updated_by'], 'integer'],
             [['title', 'slug', 'image_path', 'image_url'], 'string', 'max' => 255],
             [['image'], 'safe'],

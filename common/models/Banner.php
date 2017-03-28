@@ -23,6 +23,8 @@ use yii\behaviors\TimestampBehavior;
  */
 class Banner extends \yii\db\ActiveRecord
 {
+
+    public $image;
     /**
      * @inheritdoc
      */
@@ -51,9 +53,11 @@ class Banner extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
+            [['title', 'position'], 'required'],
             [['position'], 'string'],
             [['created_at', 'updated_at', 'created_by', 'updated_by'], 'integer'],
-            [['title', 'slug', 'image', 'link'], 'string', 'max' => 255],
+            [['title', 'slug', 'image_path','image_url', 'link'], 'string', 'max' => 255],
+            [['image'], 'safe'],
         ];
     }
 

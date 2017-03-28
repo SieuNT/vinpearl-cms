@@ -12,7 +12,7 @@ use yii\behaviors\TimestampBehavior;
  *
  * @property integer $id
  * @property integer $project_id
- * @property string $tile
+ * @property string $title
  * @property string $slug
  * @property string $video_link
  * @property integer $created_at
@@ -52,9 +52,8 @@ class Video extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['id'], 'required'],
             [['id', 'project_id', 'created_at', 'updated_at', 'created_by', 'updated_by'], 'integer'],
-            [['tile', 'slug', 'video_link'], 'string', 'max' => 255],
+            [['title', 'slug', 'video_link'], 'string', 'max' => 255],
             [['project_id'], 'exist', 'skipOnError' => true, 'targetClass' => Project::className(), 'targetAttribute' => ['project_id' => 'id']],
         ];
     }
@@ -67,9 +66,9 @@ class Video extends \yii\db\ActiveRecord
         return [
             'id' => Yii::t('app', 'ID'),
             'project_id' => Yii::t('app', 'Project ID'),
-            'tile' => Yii::t('app', 'Tile'),
-            'slug' => Yii::t('app', 'Slug'),
-            'video_link' => Yii::t('app', 'Video Link'),
+            'title' => Yii::t('app', 'Tiêu đề'),
+            'slug' => Yii::t('app', 'Đường dẫn thân thiện'),
+            'video_link' => Yii::t('app', 'Youtube Link'),
             'created_at' => Yii::t('app', 'Created At'),
             'updated_at' => Yii::t('app', 'Updated At'),
             'created_by' => Yii::t('app', 'Created By'),

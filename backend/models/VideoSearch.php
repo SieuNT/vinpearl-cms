@@ -19,7 +19,7 @@ class VideoSearch extends Video
     {
         return [
             [['id', 'project_id', 'created_at', 'updated_at', 'created_by', 'updated_by'], 'integer'],
-            [['tile', 'slug', 'video_link'], 'safe'],
+            [['title', 'slug', 'video_link'], 'safe'],
         ];
     }
 
@@ -67,7 +67,7 @@ class VideoSearch extends Video
             'updated_by' => $this->updated_by,
         ]);
 
-        $query->andFilterWhere(['like', 'tile', $this->tile])
+        $query->andFilterWhere(['like', 'title', $this->title])
             ->andFilterWhere(['like', 'slug', $this->slug])
             ->andFilterWhere(['like', 'video_link', $this->video_link]);
 
