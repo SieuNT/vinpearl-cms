@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50717
 File Encoding         : 65001
 
-Date: 2017-03-28 01:27:25
+Date: 2017-03-28 16:28:41
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -24,7 +24,8 @@ CREATE TABLE `banner` (
   `position` enum('banner_left','banner_top') COLLATE utf8_unicode_ci DEFAULT NULL,
   `title` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `slug` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `image` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `image_path` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `image_url` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `link` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `created_at` int(11) DEFAULT NULL,
   `updated_at` int(11) DEFAULT NULL,
@@ -85,18 +86,20 @@ CREATE TABLE `post` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `title` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `slug` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `image` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `image_path` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `image_url` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `content` longtext COLLATE utf8_unicode_ci,
   `created_at` int(11) DEFAULT NULL,
   `updated_at` int(11) DEFAULT NULL,
   `created_by` int(11) DEFAULT NULL,
   `updated_by` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- ----------------------------
 -- Records of post
 -- ----------------------------
+INSERT INTO `post` VALUES ('1', 'Tin tức test thử', 'tin-tuc-test-thu', '1/tRA8Ow7gq0qHEOpBgprL0mc9id_ZtkOv.jpg', '/uploads', '<p>ABC DEF</p>\r\n', '1490691316', '1490693008', '1', '1');
 
 -- ----------------------------
 -- Table structure for `project`
@@ -106,7 +109,8 @@ CREATE TABLE `project` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `title` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `slug` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `image` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `image_path` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `image_url` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `created_at` int(11) DEFAULT NULL,
   `updated_at` int(11) DEFAULT NULL,
   `created_by` int(11) DEFAULT NULL,
@@ -152,6 +156,7 @@ CREATE TABLE `user` (
   `password_hash` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `password_reset_token` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `email` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `avatar` varchar(255) COLLATE utf8_unicode_ci DEFAULT '/uploads/avatar/avatar-2.jpg',
   `status` smallint(6) NOT NULL DEFAULT '10',
   `created_at` int(11) NOT NULL,
   `updated_at` int(11) NOT NULL,
@@ -164,4 +169,27 @@ CREATE TABLE `user` (
 -- ----------------------------
 -- Records of user
 -- ----------------------------
-INSERT INTO `user` VALUES ('1', 'admin', '-FpV6ostORtnbKjT3QkBrXYy0Eg7I8aZ', '$2y$13$PMBMy62ZbnfpaiSmuoxbFejIcG7kCRl..c7p2CXeNivRkwmslKce.', null, 'tuan@sieu.com', '10', '1490636547', '1490636547');
+INSERT INTO `user` VALUES ('1', 'admin', '-FpV6ostORtnbKjT3QkBrXYy0Eg7I8aZ', '$2y$13$PMBMy62ZbnfpaiSmuoxbFejIcG7kCRl..c7p2CXeNivRkwmslKce.', null, 'tuan@sieu.com', '/uploads/avatar/avatar-2.jpg', '10', '1490636547', '1490636547');
+
+-- ----------------------------
+-- Table structure for `video`
+-- ----------------------------
+DROP TABLE IF EXISTS `video`;
+CREATE TABLE `video` (
+  `id` int(11) NOT NULL,
+  `project_id` int(11) DEFAULT NULL,
+  `tile` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `slug` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `video_link` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `created_at` int(11) DEFAULT NULL,
+  `updated_at` int(11) DEFAULT NULL,
+  `created_by` int(11) DEFAULT NULL,
+  `updated_by` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `fk_video_project` (`project_id`),
+  CONSTRAINT `fk_video_project` FOREIGN KEY (`project_id`) REFERENCES `project` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- ----------------------------
+-- Records of video
+-- ----------------------------

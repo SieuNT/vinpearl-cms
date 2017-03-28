@@ -60,9 +60,9 @@ class Testimonial extends \yii\db\ActiveRecord
         return [
             'id' => Yii::t('app', 'ID'),
             'project_id' => Yii::t('app', 'Project ID'),
-            'content' => Yii::t('app', 'Content'),
-            'full_name' => Yii::t('app', 'Full Name'),
-            'company' => Yii::t('app', 'Company'),
+            'content' => Yii::t('app', 'Nội dung'),
+            'full_name' => Yii::t('app', 'Họ và tên'),
+            'company' => Yii::t('app', 'Công ty'),
             'created_at' => Yii::t('app', 'Created At'),
             'updated_at' => Yii::t('app', 'Updated At'),
             'created_by' => Yii::t('app', 'Created By'),

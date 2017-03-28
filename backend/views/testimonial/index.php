@@ -3,30 +3,37 @@
 use yii\helpers\Html;
 use yii\grid\GridView;
 use yii\widgets\Pjax;
+
 /* @var $this yii\web\View */
 /* @var $searchModel backend\models\TestimonialSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = Yii::t('app', 'Testimonials');
+$this->title = Yii::t('app', 'Câu chuyện khách hàng');
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="testimonial-index">
 
-    <h1><?= Html::encode($this->title) ?></h1>
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
-
-    <p>
-        <?= Html::a(Yii::t('app', 'Create Testimonial'), ['create'], ['class' => 'btn btn-success']) ?>
-    </p>
-<?php Pjax::begin(); ?>    <?= GridView::widget([
+    <?= Html::a(Yii::t('app', 'Thêm mới'), ['create'], ['class' => 'btn btn-info m-b-15']) ?>
+    <?php Pjax::begin(); ?>    <?= GridView::widget([
         'dataProvider' => $dataProvider,
-        'filterModel' => $searchModel,
+//        'filterModel' => $searchModel,
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
             'id',
-            'project_id',
-            'content:ntext',
+            [
+                'attribute' => 'project.title',
+                'label' => 'Dự án'
+            ],
+            [
+                'attribute' => 'content',
+                'format' => 'html',
+                'label' => 'Nội dung',
+                'value' => function ($model) {
+                    return \yii\helpers\StringHelper::truncateWords(strip_tags($model->content), 50);
+                }
+            ],
             'full_name',
             'company',
             // 'created_at',
@@ -37,4 +44,4 @@ $this->params['breadcrumbs'][] = $this->title;
             ['class' => 'yii\grid\ActionColumn'],
         ],
     ]); ?>
-<?php Pjax::end(); ?></div>
+    <?php Pjax::end(); ?></div>

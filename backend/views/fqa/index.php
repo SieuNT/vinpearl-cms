@@ -28,14 +28,17 @@ $this->params['breadcrumbs'][] = $this->title;
             'project_id',
             'title',
             'slug',
-            'question:ntext',
+//            'question:ntext',
             // 'answer:ntext',
             // 'created_at',
             // 'updated_at',
             // 'created_by',
             // 'updated_by',
 
-            ['class' => 'yii\grid\ActionColumn'],
+            [
+                'class' => 'yii\grid\ActionColumn',
+                'template' => '{update} {delete}',
+            ],
         ],
     ]); ?>
 <?php Pjax::end(); ?></div>

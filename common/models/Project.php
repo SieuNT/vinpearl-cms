@@ -25,6 +25,10 @@ use yii\behaviors\TimestampBehavior;
 class Project extends \yii\db\ActiveRecord
 {
     /**
+     * @var
+     */
+    public $image;
+    /**
      * @inheritdoc
      */
     public static function tableName()
@@ -53,7 +57,8 @@ class Project extends \yii\db\ActiveRecord
     {
         return [
             [['created_at', 'updated_at', 'created_by', 'updated_by'], 'integer'],
-            [['title', 'slug', 'image'], 'string', 'max' => 255],
+            [['title', 'slug', 'image_path', 'image_url'], 'string', 'max' => 255],
+            [['image'], 'safe'],
         ];
     }
 
@@ -64,9 +69,9 @@ class Project extends \yii\db\ActiveRecord
     {
         return [
             'id' => Yii::t('app', 'ID'),
-            'title' => Yii::t('app', 'Title'),
-            'slug' => Yii::t('app', 'Slug'),
-            'image' => Yii::t('app', 'Image'),
+            'title' => Yii::t('app', 'Tiêu đề'),
+            'slug' => Yii::t('app', 'Đường dẫn thân thiện'),
+            'image' => Yii::t('app', 'Hình ảnh'),
             'created_at' => Yii::t('app', 'Created At'),
             'updated_at' => Yii::t('app', 'Updated At'),
             'created_by' => Yii::t('app', 'Created By'),
