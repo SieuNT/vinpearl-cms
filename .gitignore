@@ -34,3 +34,4 @@ phpunit.phar
 # vagrant runtime
 /.vagrant
 /frontend/web/admin
+/frontend/web/uploads/post
