@@ -88,11 +88,11 @@ AppAsset::register($this);
                 <li class="dropdown text-center">
                     <?php if (!Yii::$app->user->isGuest): ?>
                     <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-                        <img alt="" src="img/avatar-2.jpg" class="img-circle profile-img thumb-sm">
+                        <img alt="" src="<?= Yii::$app->user->identity->avatar; ?>" class="img-circle profile-img thumb-sm">
                         <span class="username"><?= Yii::$app->user->identity->username; ?> </span> <span class="caret"></span>
                     </a>
                     <ul class="dropdown-menu pro-menu fadeInUp animated" tabindex="5003" style="overflow: hidden; outline: none;">
-                        <li><a href="profile.html"><i class="fa fa-briefcase"></i>Trang cá nhân</a></li>
+                        <li><a href="#"><i class="fa fa-briefcase"></i>Trang cá nhân</a></li>
                         <li><a href="#"><i class="fa fa-cog"></i> Đổi mật khẩu</a></li>
                         <li>
                             <?=Html::beginForm(['/site/logout'], 'post'); ?>
@@ -107,7 +107,7 @@ AppAsset::register($this);
     </header>
     <div class="wraper container-fluid">
         <div class="page-title">
-            <h3 class="title">Blank Page</h3>
+            <h3 class="title"><?= Html::encode($this->title) ?></h3>
         </div>
         <?= Alert::widget() ?>
         <div class="row">

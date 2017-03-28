@@ -1,6 +1,7 @@
 <?php
 namespace backend\controllers;
 
+use trntv\filekit\actions\UploadAction;
 use Yii;
 use yii\web\Controller;
 use yii\filters\VerbFilter;
@@ -26,7 +27,7 @@ class SiteController extends Controller
                         'allow' => true,
                     ],
                     [
-                        'actions' => ['logout', 'index'],
+                        'actions' => ['logout', 'index', 'upload'],
                         'allow' => true,
                         'roles' => ['@'],
                     ],
@@ -49,6 +50,9 @@ class SiteController extends Controller
         return [
             'error' => [
                 'class' => 'yii\web\ErrorAction',
+            ],
+            'upload' => [
+                'class'=> UploadAction::class,
             ],
         ];
     }

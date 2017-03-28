@@ -19,7 +19,8 @@
         "yiisoft/yii2-bootstrap": "~2.0.0",
         "yiisoft/yii2-swiftmailer": "~2.0.0",
         "intervention/image": "^2.3",
-        "trntv/yii2-file-kit": "^1.2"
+        "trntv/yii2-file-kit": "^1.2",
+        "mihaildev/yii2-elfinder": "^1.2"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.0.0",

@@ -3,6 +3,8 @@
 namespace common\models;
 
 use Yii;
+use yii\behaviors\BlameableBehavior;
+use yii\behaviors\TimestampBehavior;
 
 /**
  * This is the model class for table "testimonial".
@@ -27,6 +29,14 @@ class Testimonial extends \yii\db\ActiveRecord
     public static function tableName()
     {
         return 'testimonial';
+    }
+
+    public function behaviors()
+    {
+        return [
+            TimestampBehavior::className(),
+            BlameableBehavior::className(),
+        ];
     }
 
     /**

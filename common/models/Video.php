@@ -8,14 +8,13 @@ use yii\behaviors\SluggableBehavior;
 use yii\behaviors\TimestampBehavior;
 
 /**
- * This is the model class for table "fqa".
+ * This is the model class for table "video".
  *
  * @property integer $id
  * @property integer $project_id
- * @property string $title
+ * @property string $tile
  * @property string $slug
- * @property string $question
- * @property string $answer
+ * @property string $video_link
  * @property integer $created_at
  * @property integer $updated_at
  * @property integer $created_by
@@ -23,14 +22,14 @@ use yii\behaviors\TimestampBehavior;
  *
  * @property Project $project
  */
-class Fqa extends \yii\db\ActiveRecord
+class Video extends \yii\db\ActiveRecord
 {
     /**
      * @inheritdoc
      */
     public static function tableName()
     {
-        return 'fqa';
+        return 'video';
     }
 
     public function behaviors()
@@ -53,9 +52,9 @@ class Fqa extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['project_id', 'created_at', 'updated_at', 'created_by', 'updated_by'], 'integer'],
-            [['question', 'answer'], 'string'],
-            [['title', 'slug'], 'string', 'max' => 255],
+            [['id'], 'required'],
+            [['id', 'project_id', 'created_at', 'updated_at', 'created_by', 'updated_by'], 'integer'],
+            [['tile', 'slug', 'video_link'], 'string', 'max' => 255],
             [['project_id'], 'exist', 'skipOnError' => true, 'targetClass' => Project::className(), 'targetAttribute' => ['project_id' => 'id']],
         ];
     }
@@ -68,10 +67,9 @@ class Fqa extends \yii\db\ActiveRecord
         return [
             'id' => Yii::t('app', 'ID'),
             'project_id' => Yii::t('app', 'Project ID'),
-            'title' => Yii::t('app', 'Title'),
+            'tile' => Yii::t('app', 'Tile'),
             'slug' => Yii::t('app', 'Slug'),
-            'question' => Yii::t('app', 'Question'),
-            'answer' => Yii::t('app', 'Answer'),
+            'video_link' => Yii::t('app', 'Video Link'),
             'created_at' => Yii::t('app', 'Created At'),
             'updated_at' => Yii::t('app', 'Updated At'),
             'created_by' => Yii::t('app', 'Created By'),
@@ -89,10 +87,10 @@ class Fqa extends \yii\db\ActiveRecord
 
     /**
      * @inheritdoc
-     * @return FqaQuery the active query used by this AR class.
+     * @return VideoQuery the active query used by this AR class.
      */
     public static function find()
     {
-        return new FqaQuery(get_called_class());
+        return new VideoQuery(get_called_class());
     }
 }
