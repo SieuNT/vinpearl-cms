@@ -248,3 +248,16 @@ a.desc:after {
     margin: 0;
     line-height: 1.5;
 }
+
+.post-detail--title {
+    margin: 0;
+    font-size: 22px;
+    color: #1b1464;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.post-detail--content {
+    text-align: justify !important;
+    font-family: Roboto !important;
+}
