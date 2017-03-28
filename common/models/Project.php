@@ -2,6 +2,7 @@
 
 namespace common\models;
 
+use trntv\filekit\behaviors\UploadBehavior;
 use Yii;
 use yii\behaviors\BlameableBehavior;
 use yii\behaviors\SluggableBehavior;
@@ -46,6 +47,12 @@ class Project extends \yii\db\ActiveRecord
                 'attribute' => 'title',
                 'slugAttribute' => 'slug',
                 'ensureUnique' => true,
+            ],
+            [
+                'class' => UploadBehavior::className(),
+                'attribute' => 'image',
+                'pathAttribute' => 'image_path',
+                'baseUrlAttribute' => 'image_url'
             ],
         ];
     }
