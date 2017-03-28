@@ -68,11 +68,11 @@ class Banner extends \yii\db\ActiveRecord
     {
         return [
             'id' => Yii::t('app', 'ID'),
-            'position' => Yii::t('app', 'Position'),
-            'title' => Yii::t('app', 'Title'),
-            'slug' => Yii::t('app', 'Slug'),
-            'image' => Yii::t('app', 'Image'),
-            'link' => Yii::t('app', 'Link'),
+            'position' => Yii::t('app', 'Vị trí hiện thị'),
+            'title' => Yii::t('app', 'Tiêu đề'),
+            'slug' => Yii::t('app', 'Đường dẫn thân thiện'),
+            'image' => Yii::t('app', 'Hình ảnh'),
+            'link' => Yii::t('app', 'Liên kết'),
             'created_at' => Yii::t('app', 'Created At'),
             'updated_at' => Yii::t('app', 'Updated At'),
             'created_by' => Yii::t('app', 'Created By'),
