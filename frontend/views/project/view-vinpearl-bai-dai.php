@@ -44,7 +44,7 @@ $this->registerCssFile('@web/css/baidai.css', [
                     <strong>18 X 25% = 4,5 tỷ</strong>
                 </div>
             </div>
-            <hr class="hr-blank" />
+            <hr class="hr-blank"/>
             <div class="row">
                 <div class="col-xs-8">
                     Giá sau ưu đãi đã có VAT (10%)
@@ -53,7 +53,7 @@ $this->registerCssFile('@web/css/baidai.css', [
                     <strong>18 - 4,5 = 13,5 x 110% = 14,8 tỷ</strong>
                 </div>
             </div>
-            <hr class="hr-blank" />
+            <hr class="hr-blank"/>
             <div class="row">
                 <div class="col-xs-8">
                     Khách hàng cần có tài chính = 35% giá biệt thự, 65% còn lại ngân hàng hỗ trợ
@@ -62,25 +62,28 @@ $this->registerCssFile('@web/css/baidai.css', [
                     <strong>14,8 x 35% = 5,1 tỷ</strong>
                 </div>
             </div>
-            <hr class="hr-blank" />
+            <hr class="hr-blank"/>
             <div class="row">
                 <div class="col-xs-4">
                     <strong class="pull-right">Để đầu tư căn biệt thự</strong>
                 </div>
                 <div class="col-xs-7 col-xs-offset-1">
-                    <p><?= Html::img('/img/icon-arrow.png') ?>&nbsp;&nbsp;&nbsp;<strong>18 Tỷ khách hàng chỉ cần bỏ ra từ 5,1 Tỷ</strong></p>
-                    <p><?= Html::img('/img/icon-arrow.png') ?>&nbsp;&nbsp;&nbsp;<strong>20 Tỷ khách hàng chỉ cần bỏ ra từ 5.7 Tỷ</strong></p>
+                    <p><?= Html::img('/img/icon-arrow.png') ?>&nbsp;&nbsp;&nbsp;<strong>18 Tỷ khách hàng chỉ cần bỏ ra
+                            từ 5,1 Tỷ</strong></p>
+                    <p><?= Html::img('/img/icon-arrow.png') ?>&nbsp;&nbsp;&nbsp;<strong>20 Tỷ khách hàng chỉ cần bỏ ra
+                            từ 5.7 Tỷ</strong></p>
                 </div>
             </div>
-            <hr class="hr-blank" />
+            <hr class="hr-blank"/>
             <div class="row">
                 <div class="col-xs-12">
                     <div class="text-center center-block">
-                        <a href="javascript:;" class="js-next-lienhe"><?= Html::img('/img/btn-register-counsult.png') ?></a>
+                        <a href="javascript:;"
+                           class="js-next-lienhe"><?= Html::img('/img/btn-register-counsult.png') ?></a>
                     </div>
                 </div>
             </div>
-            <hr class="hr-blank" />
+            <hr class="hr-blank"/>
         </div>
     </div>
 </div>
@@ -98,12 +101,17 @@ $this->registerCssFile('@web/css/baidai.css', [
                         <ul class="section-tongquang-list">
                             <li><strong>Tên dự án:</strong> VinPearl Bãi Dài (VinPearl Long Beach Villas)</li>
                             <li><strong>Chủ đầu tư:</strong> Tập đoàn VinGroup</li>
-                            <li><strong>Vị trị dự án:</strong> Lô D6b2 và D7A1 thuộc khu 2, khu du lịch bắc bán đảo Cam Ranh, huyện Cam Ranh, Khánh Hòa. Nơi đây là "Mảnh đất vàng" tại khu vực trung tâm vịnh Cam Ranh.</li>
+                            <li><strong>Vị trị dự án:</strong> Lô D6b2 và D7A1 thuộc khu 2, khu du lịch bắc bán đảo Cam
+                                Ranh, huyện Cam Ranh, Khánh Hòa. Nơi đây là "Mảnh đất vàng" tại khu vực trung tâm vịnh
+                                Cam Ranh.
+                            </li>
                             <li><strong>Tổng diện tích đất:</strong> 261.948m2</li>
                             <li><strong>Tổng diện tích xây dựng:</strong> 48.045m2</li>
                             <li><strong>Tổng diện tích sàn xây dựng:</strong> 64.120m2</li>
                             <li><strong>Mật độ xây dựng:</strong> 18%</li>
-                            <li><strong>Đơn vị thiết kế:</strong> Dự án được tư vấn và thiết kế bởi tập đoàn tư vấn thiết kế hàng đầu về cảnh quan và resort trên thế giới FSC & EDSA (Mỹ)</li>
+                            <li><strong>Đơn vị thiết kế:</strong> Dự án được tư vấn và thiết kế bởi tập đoàn tư vấn
+                                thiết kế hàng đầu về cảnh quan và resort trên thế giới FSC & EDSA (Mỹ)
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -139,9 +147,12 @@ $this->registerCssFile('@web/css/baidai.css', [
             <div class="col-sm-12 col-md-4">
                 <p class="text-center center-block section-vitri--title">Vị trí</p>
                 <div class="section-vitri--desc">
-                    <p>Dự án Vinpearl Bãi Dài Khánh Hòa tọa lạc tại Lô D6b2 và D7A1 thuộc khu 2, khu du lịch bắc bán đảo Cam Ranh, xã Cam Hải Đông, huyện Cam Lâm, tỉnh Khánh Hòa. Nơi đây có thiên thời, địa lợi, nhân hòa, cạnh thành phố Nha Trang, cảng biển Nha Trang, cảng hàng không quốc tế Cam Ranh…</p>
-                    <hr class="hr-blank" />
-                    <p>Dự án thừa hưởng lợi thế từ bờ biển đẹp nhất Việt Nam, khí hậu trong lành, giao thông thuận lợi, cạnh sân bay Quốc tế Cam Ranh, Bãi Dài bãi cát dài và mịn màng đến xinh đẹp đến ngỡ ngàng.</p>
+                    <p>Dự án Vinpearl Bãi Dài Khánh Hòa tọa lạc tại Lô D6b2 và D7A1 thuộc khu 2, khu du lịch bắc bán đảo
+                        Cam Ranh, xã Cam Hải Đông, huyện Cam Lâm, tỉnh Khánh Hòa. Nơi đây có thiên thời, địa lợi, nhân
+                        hòa, cạnh thành phố Nha Trang, cảng biển Nha Trang, cảng hàng không quốc tế Cam Ranh…</p>
+                    <hr class="hr-blank"/>
+                    <p>Dự án thừa hưởng lợi thế từ bờ biển đẹp nhất Việt Nam, khí hậu trong lành, giao thông thuận lợi,
+                        cạnh sân bay Quốc tế Cam Ranh, Bãi Dài bãi cát dài và mịn màng đến xinh đẹp đến ngỡ ngàng.</p>
                 </div>
             </div>
         </div>
@@ -173,7 +184,7 @@ $this->registerCssFile('@web/css/baidai.css', [
                         <p>Giá bán: từ 15 – 17 tỷ VNĐ (chưa VAT)</p>
                     </div>
                 </div>
-                <hr class="hr-blank" />
+                <hr class="hr-blank"/>
             </div>
             <div class="col-sm-12 col-md-6">
                 <div class="nhamau-item">
@@ -188,7 +199,7 @@ $this->registerCssFile('@web/css/baidai.css', [
                         <p>Giá bán: từ 19 – 21 tỷ VNĐ (chưa VAT)</p>
                     </div>
                 </div>
-                <hr class="hr-blank" />
+                <hr class="hr-blank"/>
             </div>
         </div>
         <div class="row">
@@ -205,7 +216,7 @@ $this->registerCssFile('@web/css/baidai.css', [
                         <p>Giá bán: từ 10 – 12 tỷ VNĐ (chưa VAT)</p>
                     </div>
                 </div>
-                <hr class="hr-blank" />
+                <hr class="hr-blank"/>
             </div>
             <div class="col-sm-12 col-md-6">
                 <div class="nhamau-item">
@@ -213,15 +224,59 @@ $this->registerCssFile('@web/css/baidai.css', [
                         <?= Html::img('/img/bietthumau/4.jpg', ['class' => 'img-responsive']) ?>
                     </div>
                     <div class="nhamau-item--desc">
-                        <p class="nhamau-item--desc-title">Biệt Thự Bãi dài  2 tầng 3 phòng ngủ</p>
+                        <p class="nhamau-item--desc-title">Biệt Thự Bãi dài 2 tầng 3 phòng ngủ</p>
                         <p>Số lượng: 118 căn</p>
                         <p>Diện tích sàn xây dựng: 300m2</p>
                         <p>Hướng: vườn hoa, hướng hồ, hướng biển</p>
                         <p>Giá bán: từ 15 – 19 tỷ VNĐ (chưa VAT)</p>
                     </div>
                 </div>
-                <hr class="hr-blank" />
+                <hr class="hr-blank"/>
             </div>
+        </div>
+    </div>
+</div>
+
+<!--Ly do chon-->
+<div class="section-lydo">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="center-block text-center">
+                    <?= Html::img('/img/logo-white.png', ['class' => 'img-responsive text-center center-block']) ?>
+                </div>
+            </div>
+            <div class="col-xs-12">
+                <div class="center-block text-center">
+                    <p class="section-lydo--title">Lý do chọn đầu tư</p>
+                    <p class="section-lydo--title">VinPearl Bãi Dài</p>
+                </div>
+            </div>
+        </div>
+        <div class="section-lydo--desc">
+        <div class="row">
+            <div class="col-xs-12 col-md-6">
+                <div class="pull-right">
+                    <p class="section-lydo--desc-title">Sở hữu Vĩnh viễn</p>
+                    <hr class="hr-blank"/>
+                    <p class="section-lydo--desc-title">Sinh lời Trọn đời</p>
+
+                    <ul>
+                        <li>Chia sẻ lợi nhuận 85% trọn đời</li>
+                        <li>Hoàn vốn 100% sau 10 năm</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-xs-12 col-md-6">
+                <p class="section-lydo--desc-title">Chương trình bán hàng siêu việt</p>
+                <ul>
+                    <li>Hỗ trợ vay tới 65% với lãi suất 0%/24 tháng, năm thứ 3 cố định lãi suất 8%</li>
+                    <li>Nhận ngay CKLN 3 năm, tương đương mức chiết khấu 25%</li>
+                    <li>Tặng 15 đêm nghỉ/năm/50 năm trên toàn hệ thống VinPearl</li>
+                    <li>Tặng ngay 2 đêm nghỉ tại biệt thự VinPearl sau khi đặt cọc</li>
+                </ul>
+            </div>
+        </div>
         </div>
     </div>
 </div>

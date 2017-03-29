@@ -147,3 +147,13 @@ p.nhamau-item--desc-title {
     color: #f4b517;
     text-transform: uppercase;
 }
+
+.section-lydo {
+    background-color: #03226c;
+    background-image: url(../img/hoavan3.png);
+    background-position-x: right;
+    background-position-y: top;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    background-repeat: no-repeat;
+}
