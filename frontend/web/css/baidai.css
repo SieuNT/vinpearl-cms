@@ -157,3 +157,27 @@ p.nhamau-item--desc-title {
     padding-bottom: 30px;
     background-repeat: no-repeat;
 }
+
+.section-lydo--desc {
+    color: #fff;
+    font-size: 18px;
+}
+
+.section-lydo--desc li {
+    padding-bottom: 10px;
+}
+
+.section-lydo--desc-title {
+    color: #f4b517;
+    font-weight: bold;
+    font-size: 22px;
+}
+
+.section-lydo--title {
+    color: #f4b517;
+    font-size: 32px;
+    font-family: "VNF-Bodoni";
+    text-transform: uppercase;
+    padding-bottom: 10px;
+    margin:0;
+}
