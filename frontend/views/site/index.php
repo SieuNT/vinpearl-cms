@@ -115,18 +115,18 @@ JS;
         <?php $i = 0;
         foreach ($posts as $post): ?>
             <?php if ($i != 0 && $i%2 == 0): ?>
-                </div><p>&nbsp;</p><div class="row">
+                </div><div class="row">
             <?php endif; ?>
             <div class="col-sm-12 col-md-6">
 
                 <div class="post-item">
                     <div class="row">
-                        <div class="col-xs-6">
+                        <div class="col-xs-12 col-sm-6">
                             <div class="post-item--image">
                                 <?= Html::a(Html::img($post['image_url'] . '/' . $post['image_path'], ['class' => 'img-responsive']), ['post/view', 'slug' => $post['slug']]); ?>
                             </div>
                         </div>
-                        <div class="col-xs-6">
+                        <div class="col-xs-12 col-sm-6">
                             <h4 class="post-item--title">
                                 <?= Html::a($post['title'], ['post/view', 'slug' => $post['slug']]); ?>
                             </h4>
@@ -135,6 +135,7 @@ JS;
                             </div>
                         </div>
                     </div>
+                    <p>&nbsp;</p>
                 </div>
             </div>
         <?php $i++; endforeach; ?>

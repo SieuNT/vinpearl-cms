@@ -106,16 +106,24 @@ JS;
             </div>
             <div class="row">
                 <div class="col-xs-12 col-sm-12 col-md-3">
-                    <input type="text" class="form-control" placeholder="HỌ VÀ TÊN"/>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="HỌ VÀ TÊN"/>
+                    </div>
                 </div>
                 <div class="col-xs-12 col-sm-12 col-md-3">
-                    <input type="text" class="form-control" placeholder="SỐ ĐIỆN THOẠI"/>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="SỐ ĐIỆN THOẠI"/>
+                    </div>
                 </div>
                 <div class="col-xs-12 col-sm-12 col-md-3">
-                    <input type="email" class="form-control" placeholder="EMAIL"/>
+                    <div class="form-group">
+                        <input type="email" class="form-control" placeholder="EMAIL"/>
+                    </div>
                 </div>
                 <div class="col-xs-12 col-sm-12 col-md-3">
-                    <button type="submit" class="btn-register"><?= Html::img('/img/btn-register.png') ?></button>
+                    <div class="form-group">
+                        <button type="submit" class="btn-register"><?= Html::img('/img/btn-register.png') ?></button>
+                    </div>
                 </div>
             </div>
         </div>
