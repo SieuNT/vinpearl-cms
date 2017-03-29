@@ -53,6 +53,11 @@ return [
                     'route' => 'post/view',
                     'suffix' => ''
                 ],
+                [
+                    'pattern' => 'hoi-dap/<slug:[\w\-]+>',
+                    'route' => 'fqa/view',
+                    'suffix' => ''
+                ],
             ],
         ],
     ],

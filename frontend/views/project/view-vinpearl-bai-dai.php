@@ -4,6 +4,16 @@ use yii\web\View;
 
 $this->title = $model->title . ' | Biệt thự biển VinPearl';
 $this->registerJsFile(
+    '@web/js/smoothscroll.js',
+    [
+        'depends' => [
+            \yii\web\YiiAsset::className(),
+            \yii\bootstrap\BootstrapPluginAsset::className(),
+        ],
+        'position' => \yii\web\View::POS_END
+    ]
+);
+$this->registerJsFile(
     '@web/js/vinpearl.js',
     [
         'depends' => [
@@ -237,6 +247,7 @@ $this->registerCssFile('@web/css/baidai.css', [
         </div>
     </div>
 </div>
+<hr class="hr-blank"/>
 <!--Hoi dap-->
 <div class="section-hoidap">
     <div class="container">
@@ -257,45 +268,30 @@ $this->registerCssFile('@web/css/baidai.css', [
             </div>
             <div class="col-sm-12 col-md-6">
                 <?php
-                $testimonials = (new \yii\db\Query())
-                    ->select(['content', 'full_name', 'company'])
-                    ->from('testimonial')
-                    ->limit(3)
+                $fqas = (new \yii\db\Query())
+                    ->select(['title', 'slug'])
+                    ->from('fqa')
+                    ->where(['project_id' => 1])
+                    ->limit(5)
                     ->all();
                 ?>
                 <div class="testimonial">
-                    <h3 class="testimonial--title">Câu chuyện khách hàng</h3>
-                    <div class="testimonial--content">
-                        <ul class="rslides1">
-                            <?php foreach ($testimonials as $testimonial): ?>
+                    <h3 class="question--title">Những câu hỏi thường gặp</h3>
+                    <div class="question--content">
+                        <ul class="list-unstyled question-list">
+                            <?php foreach ($fqas as $fqa): ?>
                                 <li>
-                                    <div class="testimonial--content-text">
-                                        <?= \yii\helpers\StringHelper::truncateWords($testimonial['content'], 120) ?>
-                                        <p>&nbsp;</p>
-                                        <p><strong><?= $testimonial['full_name'] ?></strong></p>
-                                        <p><i><?= $testimonial['company'] ?> đã chia sẻ</i></p>
-                                    </div>
+                                    <p><?= Html::img('/img/icon-qa.png', ['class' => 'img-responsive']) ?> <?= Html::a($fqa['title'], ['fqa/view', 'slug' => $fqa['slug']]); ?></p>
                                 </li>
                             <?php endforeach; ?>
                         </ul>
                     </div>
                 </div>
-                <?php
-                $js = <<<JS
-   $(function() {
-    $(".rslides1").responsiveSlides({
-        speed: 500,
-        timeout: 3000,
-        pause: true
-    });
-  });
-JS;
-                $this->registerJs($js, View::POS_END);
-                ?>
             </div>
         </div>
     </div>
 </div>
+<hr class="hr-blank"/>
 <!--Ly do chon-->
 <div class="section-lydo">
     <div class="container">

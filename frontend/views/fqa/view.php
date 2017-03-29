@@ -1,0 +1,33 @@
+<?php
+use yii\helpers\Html;
+
+$this->title = $model->title;
+/* @var $this yii\web\View */
+?>
+<p>&nbsp;</p>
+<div class="container">
+    <div class="row">
+        <div class="col-xs-3">
+            <?php
+            $banners = (new \yii\db\Query())
+                ->select(['image_path', 'image_url', 'link'])
+                ->from('banner')
+                ->where(['position' => 'banner_left'])
+                ->limit(3)
+                ->all();
+            ?>
+            <?php foreach ($banners as $banner): ?>
+                <?= Html::a(Html::img($banner['image_url'] . '/' . $banner['image_path'], ['class' => 'img-responsive']), $banner['link']); ?>
+                <p>&nbsp;</p>
+            <?php endforeach; ?>
+        </div>
+        <div class="col-xs-9">
+            <h4 class="post-detail--title"><?=$model->title?></h4>
+            <div class="post-detail--content">
+                <?=$model->question ?>
+                <p><strong>Trả lời:</strong></p>
+                <?=$model->answer ?>
+            </div>
+        </div>
+    </div>
+</div>
