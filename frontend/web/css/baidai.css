@@ -1,0 +1,149 @@
+.baidai-menu {
+    margin-top: 10px;
+    background-color: #071d52;
+}
+
+.baidai-menu li {
+    display: inline-block;
+}
+
+.baidai-menu li a {
+    padding: 10px 15px;
+    display: block;
+    font-size: 24px;
+    text-transform: uppercase;
+    color: #fff;
+    text-decoration: none;
+}
+
+.baidai-menu li a:hover,
+.baidai-menu li a:focus {
+    color: #f4b517;
+}
+
+.section-price--title {
+    background-color: #f4b517;
+    text-align: center;
+    padding: 10px;
+    text-transform: uppercase;
+    color: #071d52;
+}
+
+.section-price--desc {
+    font-size: 22px;
+}
+
+.section-price--desc strong {
+    color: #071d52;
+}
+
+.hr-blank {
+    border: none;
+    background: transparent;
+    height: 20px;
+    margin: 0;
+    padding: 0;
+    display: block;
+    width: 100%;
+}
+
+.section-tongquan {
+    background-image: url(../img/section-tongquan.jpg);
+    background-size: cover;
+    background-position-x: center;
+    background-position-y: bottom;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.tongquan-wrap {
+    background: rgba(0, 0, 0, 0.53);
+    color: #fff;
+    border-radius: 10px;
+    padding: 15px;
+}
+
+.section-tongquan--title {
+    font-family: "VNF-Bodoni";
+    font-size: 32px;
+    text-transform: uppercase;
+    color: #f4b517;
+    padding-top: 10px;
+    padding-bottom: 15px;
+}
+
+.section-tongquang-list li {
+    padding-bottom: 5px;
+    font-size: 18px;
+}
+
+.section-uudai {
+    background-color: #002786;
+    background-image: url(../img/hoavan.png);
+    background-position-x: right;
+    background-position-y: bottom;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    background-repeat: no-repeat;
+}
+
+.section-vitri {
+    background-color: #124b82;
+    background-image: url(../img/hoavan2.png);
+    background-position-x: right;
+    background-position-y: top;
+    padding-top: 0;
+    padding-bottom: 0;
+    background-repeat: no-repeat;
+}
+
+.section-vitri--title {
+    font-family: "VNF-Bodoni";
+    font-size: 32px;
+    text-transform: uppercase;
+    color: #f4b517;
+    padding-top: 10px;
+    padding-bottom: 15px;
+}
+
+.section-vitri--desc {
+    font-size: 18px;
+    color: #fff;
+}
+
+.section-matbang {
+    background-color: #f5f2eb;
+}
+
+.section-nhamau--title {
+    color: #124b82;
+    font-size: 32px;
+    font-family: "VNF-Bodoni";
+    text-transform: uppercase;
+    padding-top: 10px;
+    padding-bottom: 15px;
+}
+
+.nhamau-item {
+    position: relative;
+}
+
+.nhamau-item--desc {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.49);
+}
+
+.nhamau-item--desc p {
+    padding: 0;
+    margin: 0;
+    color: #fff;
+}
+
+p.nhamau-item--desc-title {
+    font-size: 18px;
+    color: #f4b517;
+    text-transform: uppercase;
+}
