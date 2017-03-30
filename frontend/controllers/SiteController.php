@@ -12,6 +12,7 @@ use frontend\models\PasswordResetRequestForm;
 use frontend\models\ResetPasswordForm;
 use frontend\models\SignupForm;
 use frontend\models\ContactForm;
+use yii\web\Response;
 
 /**
  * Site controller
@@ -209,5 +210,109 @@ class SiteController extends Controller
         return $this->render('resetPassword', [
             'model' => $model,
         ]);
+    }
+
+    public function actionSend() {
+//        $model = new Mailbox();
+//        $model->load(Yii::$app->request->post());
+//        if(!empty($model->secret_key)) {
+//            $project = Project::find()->where(['secret_key' => $model->secret_key])->select([
+//                'id',
+//                'title',
+//                'website',
+//                'contact_name',
+//                'contact_email'
+//            ])->one();
+//            $model->project_id = $project->id;
+//            $to_email = $project->contact_email;
+//            $to_name = $project->contact_email;
+//        }
+        $projectName = 'BietThuBien-VinPearl';
+        $projectWebsite = 'BietThuBien-VinPearl.com';
+//        if(isset($project->title)) {
+//            $projectName = $project->title;
+//        }
+//        if(isset($project->website)) {
+//            $projectWebsite = $project->website;
+//        }
+        $response = Yii::$app->response;
+        $response->format = Response::FORMAT_JSON;
+        $response->charset = 'UTF-8';
+//        if($model->validate()) {
+            $body = '<p>Liên hệ từ dự án ' . $projectName . ' (website: ' . $projectWebsite . ') với nội dung:</p>' .
+                '<p><strong>Họ và tên:</strong> ' . $model->name . '</p>' .
+                '<p><strong>Số điện thoại:</strong> ' . $model->phone . '</p>' .
+                '<p><strong>Email:</strong> ' . $model->email . '</p>';
+            if(!empty($model->content)) {
+                $body .= '<p><strong>Nội dung:</strong> ' . $model->content . '</p>';
+            }
+            if($model->save()) {
+                try {
+                    $message = Yii::$app->mailer->compose();
+
+//                    if(!empty($model->to_email)) {
+//                        $message->setTo([$to_email => $to_name]);
+//                        $message->setCc(['nguyentuansieu@gmail.com' => 'Siêu™']);
+//                    } else {
+                        $message->setTo(['khuongan.lam@gmail.com' => 'Khương An']);
+                        $message->setCc(['nguyentuansieu@gmail.com' => 'Siêu™']);
+//                    }
+//                    if(!empty($model->cc_email)) {
+//                        $message->setCc([$model->cc_email, $model->cc_name]);
+//                    }
+//                    if(!empty($model->to_email)) {
+//                        $message->setBcc([$model->bcc_email, $model->bcc_name]);
+//                    }
+
+                    $message->setFrom(['no-reply@ideasvn.com' => 'Dream Paradise Media']);
+                    $message->setReplyTo([$model->email => $model->name]);
+
+                    $message->setSubject($model->name . ' liên hệ từ dự án ' . $projectName)
+                        ->setHtmlBody($body)
+                        ->send();
+                } catch (\Swift_SwiftException $e) {
+                    $response->statusCode = 500;
+                    $data = [
+                        'message' => 'Có lỗi trong quá trình gửi mail. Vui lòng thử lại',
+                        'status' => false
+                    ];
+                    return $response->data = $data;
+                }
+
+                $response->statusCode = 200;
+                $data = [
+                    'message' => 'Gửi liên hệ thành công',
+                    'status' => true
+                ];
+                return $response->data = $data;
+            } else {
+                $response->statusCode = 500;
+                $data = [
+                    'message' => $model->firstErrors,
+                    'status' => false
+                ];
+                return $response->data = $data;
+            }
+//        } else {
+//            $response->statusCode = 500;
+//            $data = [
+//                'message' => $model->getFirstErrors(),
+//                'status' => false
+//            ];
+//            return $response->data = $data;
+//        }
+
+    }
+
+    function clean_input($data) {
+        $data = trim($data);
+        $data = stripslashes($data);
+        $data = htmlspecialchars($data);
+        return $data;
+    }
+
+    public function actionThanks() {
+        echo 'Cảm ơn bạn đã liên hệ. Email của bạn sẽ được trả lời sớm nhất';
+        echo Yii::$app->view->registerMetaTag(["10;url=/", null, 'refresh']);
     }
 }

@@ -105,33 +105,88 @@ JS;
                     <p class="f-contactus-text">ĐĂNG KÝ NGAY ĐỂ ĐƯỢC TƯ VẤN TRỰC TIẾP</p>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-xs-12 col-sm-12 col-md-3">
-                    <div class="form-group">
-                        <input type="text" class="form-control" placeholder="HỌ VÀ TÊN"/>
+            <form class="register-form" data-index="1" role="form" method="post" action="">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="form-group">
+                            <div class="msg_form" id="msg_form_2"></div>
+                        </div>
                     </div>
                 </div>
-                <div class="col-xs-12 col-sm-12 col-md-3">
-                    <div class="form-group">
-                        <input type="text" class="form-control" placeholder="SỐ ĐIỆN THOẠI"/>
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-3">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="HỌ VÀ TÊN"/>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-3">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="SỐ ĐIỆN THOẠI"/>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-3">
+                        <div class="form-group">
+                            <input type="email" class="form-control" placeholder="EMAIL"/>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-3">
+                        <div class="form-group">
+                            <button type="submit" class="btn-register"><?= Html::img('/img/btn-register.png') ?></button>
+                        </div>
                     </div>
                 </div>
-                <div class="col-xs-12 col-sm-12 col-md-3">
-                    <div class="form-group">
-                        <input type="email" class="form-control" placeholder="EMAIL"/>
-                    </div>
-                </div>
-                <div class="col-xs-12 col-sm-12 col-md-3">
-                    <div class="form-group">
-                        <button type="submit" class="btn-register"><?= Html::img('/img/btn-register.png') ?></button>
-                    </div>
-                </div>
-            </div>
+            </form>
         </div>
     </div>
 
 </footer>
+<?php
+$js = <<<JS
+(function ($) {
+    var baseUrl = "http://bietthubien-vinpearl.com";
+    $('.register-form').submit(function () {
+        //$('#complete').remove();
+        var index = $(this).attr('data-index');
+        $.ajax({
+            type: 'POST',
+            dataType: 'json',
+            url: baseUrl + '/site/mail',
+            data: $(this).serialize(),
+            beforeSend: function () {
+                $('#btn_register_' + index).attr("disabled", true);
+                $('#msg_form_' + index).html('Đang gửi...').css('color:#fff');
+                $('.has-error.has-danger').removeClass('has-error has-danger');
+                $('.help-inline.text-danger.text-small').remove();
+            },
+            success: function (data) {
+                if (data.constructor === String) {
+                    data = JSON.parse(data);
+                }
+                $('#msg_form_' + index).html('');
+                window.location.href = "site/thanks";
+                $('#btn_register_' + index).removeAttr("disabled");
+            },
+            error: function (res) {
+                if (res.constructor === String) {
+                    var res = JSON.parse(res);
+                }
+                var errors = JSON.parse(res.responseText);
+                var message = '';
+                $.each(errors.message, function (k, v) {
+                    $('input[name="Mailboxes['+k+']"]').after('<span class="help-inline text-danger text-small"><small>'+ v +'</small></span>').closest('div').addClass('has-error has-danger');
+                });
+                $('#msg_form_' + index).html(message);
+                $('#btn_register_' + index).removeAttr("disabled");
 
+            }
+        });
+        return false;
+    });
+
+})(jQuery);
+JS;
+$this->registerJs($js, View::POS_END);
+?>
 <?php $this->endBody() ?>
 </body>
 </html>
