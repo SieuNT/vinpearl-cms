@@ -7,7 +7,7 @@ $this->title = $model->title;
 <p>&nbsp;</p>
 <div class="container">
     <div class="row">
-        <div class="col-xs-3">
+        <div class="col-md-3 col-lg-9 hidden-sm">
             <?php
             $banners = (new \yii\db\Query())
                 ->select(['image_path', 'image_url', 'link'])
@@ -21,7 +21,7 @@ $this->title = $model->title;
                 <p>&nbsp;</p>
             <?php endforeach; ?>
         </div>
-        <div class="col-xs-9">
+        <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9">
             <h4 class="post-detail--title"><?=$model->title?></h4>
             <div class="post-detail--content">
                 <?=$model->question ?>

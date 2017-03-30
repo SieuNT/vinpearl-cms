@@ -16,6 +16,34 @@
     text-decoration: none;
 }
 
+@media (max-width: 1025px) {
+    .baidai-menu li a {
+        font-size: 22px;
+    }
+}
+
+@media (max-width: 1025px) {
+    .baidai-menu li a {
+        font-size: 22px;
+    }
+}
+@media (max-width: 769px) {
+    .baidai-menu li a {
+        font-size: 16px;
+    }
+}
+@media (max-width: 481px) {
+    .baidai-menu li a {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 425px) {
+    .baidai-menu {
+        display:none;
+    }
+}
+
 .baidai-menu li a:hover,
 .baidai-menu li a:focus {
     color: #f4b517;

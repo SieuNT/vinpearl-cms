@@ -8,7 +8,7 @@ $this->title = 'Tin tức biệt thự biển VinPearl';
 <p>&nbsp;</p>
 <div class="container">
     <div class="row">
-        <div class="col-xs-3">
+        <div class="col-md-3 col-lg-9 hidden-sm">
             <?php
             $banners = (new \yii\db\Query())
                 ->select(['image_path', 'image_url', 'link'])
@@ -22,13 +22,13 @@ $this->title = 'Tin tức biệt thự biển VinPearl';
                 <p>&nbsp;</p>
             <?php endforeach; ?>
         </div>
-        <div class="col-xs-9">
+        <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9">
             <?php foreach ($models as $model): ?>
             <div class="row">
-                <div class="col-xs-4">
+                <div class="col-xs-12 col-sm-6 col-md-5 col-lg-4">
                     <?=Html::a(Html::img($model['image_url'] . '/' . $model['image_path'], ['class' => 'img-responsive']), ['post/view', 'slug' => $model['slug']])?>
                 </div>
-                <div class="col-xs-8">
+                <div class="col-xs-12 col-sm-6 col-md-7 col-lg-8">
                     <h4 class="post-item--title">
                         <?= Html::a($model['title'], ['post/view', 'slug' => $model['slug']]); ?>
                     </h4>

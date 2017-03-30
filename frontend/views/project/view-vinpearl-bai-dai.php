@@ -47,32 +47,21 @@ $this->registerCssFile('@web/css/baidai.css', [
             </div>
         </div>
         <div class="section-price--desc">
-            <div class="row">
-                <div class="col-xs-8">
-                    Khách hàng nhận ngay 25% từ cam kết cho thuê trong 3 năm
-                </div>
-                <div class="col-xs-4">
-                    <strong>18 X 25% = 4,5 tỷ</strong>
-                </div>
-            </div>
-            <hr class="hr-blank"/>
-            <div class="row">
-                <div class="col-xs-8">
-                    Giá sau ưu đãi đã có VAT (10%)
-                </div>
-                <div class="col-xs-4">
-                    <strong>18 - 4,5 = 13,5 x 110% = 14,8 tỷ</strong>
-                </div>
-            </div>
-            <hr class="hr-blank"/>
-            <div class="row">
-                <div class="col-xs-8">
-                    Khách hàng cần có tài chính = 35% giá biệt thự, 65% còn lại ngân hàng hỗ trợ
-                </div>
-                <div class="col-xs-4">
-                    <strong>14,8 x 35% = 5,1 tỷ</strong>
-                </div>
-            </div>
+            <table class="table table-bordered table-responsive">
+                <tr>
+                    <td>Khách hàng nhận ngay 25% từ cam kết cho thuê trong 3 năm</td>
+                    <td>18 x 25% = 4,5 tỷ</td>
+                </tr>
+                <tr>
+                    <td>Giá sau ưu đãi đã có VAT (10%)</td>
+                    <td>18 - 4,5 = 13,5 x 110% = 14,8 tỷ</td>
+                </tr>
+                <tr>
+                    <td>Khách hàng cần có tài chính = 35% giá biệt thự, 65% còn lại ngân hàng hỗ trợ</td>
+                    <td>14,8 x 35% = 5,1 tỷ</td>
+                </tr>
+            </table>
+
             <hr class="hr-blank"/>
             <div class="row">
                 <div class="col-xs-4">
@@ -143,10 +132,10 @@ $this->registerCssFile('@web/css/baidai.css', [
         <hr class="hr-blank"/>
         <hr class="hr-blank"/>
         <div class="row">
-            <div class="col-xs-12 col-md-6 col-lg-3"><?= Html::img('/img/vinpearl-uudai/1.png') ?></div>
-            <div class="col-xs-12 col-md-6 col-lg-3"><?= Html::img('/img/vinpearl-uudai/2.png') ?></div>
-            <div class="col-xs-12 col-md-6 col-lg-3"><?= Html::img('/img/vinpearl-uudai/3.png') ?></div>
-            <div class="col-xs-12 col-md-6 col-lg-3"><?= Html::img('/img/vinpearl-uudai/4.png') ?></div>
+            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3"><?= Html::img('/img/vinpearl-uudai/1.png', ['class' => 'img-responsive text-center center-block']) ?></div>
+            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3"><?= Html::img('/img/vinpearl-uudai/2.png', ['class' => 'img-responsive text-center center-block']) ?></div>
+            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3"><?= Html::img('/img/vinpearl-uudai/3.png', ['class' => 'img-responsive text-center center-block']) ?></div>
+            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3"><?= Html::img('/img/vinpearl-uudai/4.png', ['class' => 'img-responsive text-center center-block']) ?></div>
         </div>
     </div>
 </div>
