@@ -1,6 +1,7 @@
 <?php
 namespace frontend\controllers;
 
+use common\models\Mailbox;
 use Yii;
 use yii\base\InvalidParamException;
 use yii\web\BadRequestHttpException;
@@ -212,9 +213,9 @@ class SiteController extends Controller
         ]);
     }
 
-    public function actionSend() {
-//        $model = new Mailbox();
-//        $model->load(Yii::$app->request->post());
+    public function actionMail() {
+        $model = new Mailbox();
+        $model->load(Yii::$app->request->post());
 //        if(!empty($model->secret_key)) {
 //            $project = Project::find()->where(['secret_key' => $model->secret_key])->select([
 //                'id',
@@ -238,7 +239,7 @@ class SiteController extends Controller
         $response = Yii::$app->response;
         $response->format = Response::FORMAT_JSON;
         $response->charset = 'UTF-8';
-//        if($model->validate()) {
+        if($model->validate()) {
             $body = '<p>Liên hệ từ dự án ' . $projectName . ' (website: ' . $projectWebsite . ') với nội dung:</p>' .
                 '<p><strong>Họ và tên:</strong> ' . $model->name . '</p>' .
                 '<p><strong>Số điện thoại:</strong> ' . $model->phone . '</p>' .
@@ -293,14 +294,14 @@ class SiteController extends Controller
                 ];
                 return $response->data = $data;
             }
-//        } else {
-//            $response->statusCode = 500;
-//            $data = [
-//                'message' => $model->getFirstErrors(),
-//                'status' => false
-//            ];
-//            return $response->data = $data;
-//        }
+        } else {
+            $response->statusCode = 500;
+            $data = [
+                'message' => $model->getFirstErrors(),
+                'status' => false
+            ];
+            return $response->data = $data;
+        }
 
     }
 
@@ -313,6 +314,6 @@ class SiteController extends Controller
 
     public function actionThanks() {
         echo 'Cảm ơn bạn đã liên hệ. Email của bạn sẽ được trả lời sớm nhất';
-        echo Yii::$app->view->registerMetaTag(["10;url=/", null, 'refresh']);
+        echo Yii::$app->view->registerMetaTag(["3;url=/", null, 'refresh']);
     }
 }

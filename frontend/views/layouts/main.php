@@ -116,17 +116,17 @@ JS;
                 <div class="row">
                     <div class="col-xs-12 col-sm-12 col-md-3">
                         <div class="form-group">
-                            <input type="text" class="form-control" placeholder="HỌ VÀ TÊN"/>
+                            <input type="text" name="Mailbox[name]" class="form-control" placeholder="HỌ VÀ TÊN"/>
                         </div>
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-3">
                         <div class="form-group">
-                            <input type="text" class="form-control" placeholder="SỐ ĐIỆN THOẠI"/>
+                            <input type="text" name="Mailbox[phone]" class="form-control" placeholder="SỐ ĐIỆN THOẠI"/>
                         </div>
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-3">
                         <div class="form-group">
-                            <input type="email" class="form-control" placeholder="EMAIL"/>
+                            <input type="email" name="Mailbox[email]" class="form-control" placeholder="EMAIL"/>
                         </div>
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-3">
