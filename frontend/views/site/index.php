@@ -39,7 +39,7 @@ $this->title = 'Biệt thự biển VinPearl';
                         <?php foreach ($testimonials as $testimonial): ?>
                             <li>
                                 <div class="testimonial--content-text">
-                                    <?= \yii\helpers\StringHelper::truncateWords($testimonial['content'], 120) ?>
+                                    <?= \yii\helpers\StringHelper::truncateWords(strip_tags($testimonial['content']), 120) ?>
                                     <p>&nbsp;</p>
                                     <p><strong><?= $testimonial['full_name'] ?></strong></p>
                                     <p><i><?= $testimonial['company'] ?> đã chia sẻ</i></p>
@@ -80,7 +80,7 @@ JS;
             ->all();
         ?>
         <?php foreach ($projects as $project): ?>
-            <div class="col-xs-4">
+            <div class="col-xs-12 col-sm-4">
                 <div class="project-item">
                     <div class="project-item--image">
                         <?= Html::a(Html::img($project['image_url'] . '/' . $project['image_path'], ['class' => 'img-responsive']), ['project/view', 'slug' => $project['slug']]); ?>
@@ -91,12 +91,12 @@ JS;
                         </h4>
                     </div>
                 </div>
+                <p>&nbsp;</p>
             </div>
         <?php endforeach; ?>
     </div>
 
     <!--Tin tức-->
-    <p>&nbsp;</p>
     <div class="row">
         <div class="col-xs-12">
             <h3 class="project--title">Tin tức Nổi bật</h3>

@@ -50,8 +50,9 @@ AppAsset::register($this);
     ]);
     $menuItems = [
         ['label' => 'Trang chủ', 'url' => ['site/index']],
-        ['label' => 'VinPearl Bãi Dài', 'url' => ['project/view', 'slug' => 'vinpearl-bai-dai']],
-        ['label' => 'VinPearl Nha Trang', 'url' => ['project/view', 'slug' => 'vinpearl-nha-trang']],
+        ['label' => 'VinPearl Nha Trang', 'url' => ['project/view', 'slug' => 'vinpearl-nha-trang'], 'items' => [
+            ['label' => 'VinPearl Bãi Dài', 'url' => ['project/view', 'slug' => 'vinpearl-bai-dai']],
+        ]],
         ['label' => 'VinPearl Phú Quốc', 'url' => ['project/view', 'slug' => 'vinpearl-phu-quoc']],
         ['label' => 'Tin tức', 'url' => ['post/index']],
     ];
