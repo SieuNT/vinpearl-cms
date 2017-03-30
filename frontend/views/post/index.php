@@ -8,7 +8,7 @@ $this->title = 'Tin tức biệt thự biển VinPearl';
 <p>&nbsp;</p>
 <div class="container">
     <div class="row">
-        <div class="col-md-3 col-lg-9 hidden-sm">
+        <div class="col-md-3 col-lg-3 hidden-sm hidden-xs">
             <?php
             $banners = (new \yii\db\Query())
                 ->select(['image_path', 'image_url', 'link'])
